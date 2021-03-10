@@ -30,15 +30,12 @@ html {
     /* font-family: "Inter Web","Helvetica Neue", Helvetica, arial, sans-serif; */
     font-family: droid-serif, serif;
     color: #5C6366;
-    padding: 48px 24px 24px;
+    /* padding: 48px 24px 24px; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    max-width: 42em;
-    margin: 0 auto;
-}
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -174,6 +171,15 @@ a:focus {
     component: author
 */
 
+.c-quote{
+    font-size: 24px;
+    line-height: 32px;
+    padding: 24px 16px 24px 16px;
+    color: #00b37d;
+    background-color: #e6fff7;
+    margin: 48px 0px 48px 0px;
+}
+
 .c-author {
     display: flex;
     align-items: center;
@@ -190,7 +196,15 @@ a:focus {
 
 .c-author__name,
 .c-author__meta {
-    margin-bottom: 0;
+    margin-bottom: 0px;
+}
+
+
+
+.c-author__meta {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Inter Web", sans-serif;
 }
 
 .c-author__name{
@@ -198,11 +212,98 @@ a:focus {
     line-height: 24px;
 }
 
-.c-author__meta {
-    font-size: 14px;
-    line-height: 24px;
-    font-family: "Inter Web", sans-serif;
+@media (min-width: 992px){
+    .c-author{
+        flex-direction: column;
+        align-items: start;
+    }
 }
+
+/* 
+    component : article
+*/
+
+.c-article__header,
+.c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header{
+    padding: 24px 24px 0px;
+}
+
+.c-article__body{
+    padding: 0px 24px;
+}
+
+.c-article__date{
+    font-size: 14px;
+    line-height: 16px;
+}
+
+
+@media (min-width: 768px){
+    h1 {
+        font-size: 58px;
+        line-height: 72px;
+    }
+
+    .c-article__header{
+        padding: 48px 48px 24px;
+    }
+    .c-article__body{
+        padding: 24px 48px;
+    }
+
+    .c-article__aside{
+        padding-bottom: 24px;
+    }
+}
+
+@media (min-width: 992px){
+    .c-article__body{
+        display: flex;
+        gap: 24px;
+    }
+
+    .c-article__aside{
+        width: 25%; 
+    }
+
+    .c-article__content{
+        width: 75%;
+    }
+}
+
+/* 
+    Utility: max-width
+*/
+
+.u-max-width-xs{
+    max-width: 30em;
+}
+
+.u-max-width-sm{
+    max-width: 36em;
+}
+
+.u-max-width-m{
+    max-width: 40em;
+}
+
+/* 
+    Utility: margin bottom
+*/
+
+.u-mb-clear{
+    margin-bottom: 0px;
+}
+
+.u-mb-sm{
+    margin-bottom: 8px;
+}
+
 
 /* Small devices (landscape phones, 576px and up) */
 
@@ -211,9 +312,6 @@ a:focus {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-    html {
-        padding: 48px 48px 24px;
-    }
     h1 {
         font-size: 58px;
         line-height: 64px;
